@@ -11,12 +11,17 @@ namespace twozerofoureight
         protected int boardSize; // default is 4
         protected int[,] board;
         protected Random rand;
-
+        private int _score = 0;
         public TwoZeroFourEightModel() : this(4)
         {
             // default board size is 4 
         }
 
+        public int Score
+        {
+            get { return _score; }
+            set { _score = value; }
+        }
         public int[,] GetBoard()
         {
             return board;
@@ -49,6 +54,7 @@ namespace twozerofoureight
                     break;
                 }
             }
+            _score += 2;
             return input;
         }
 
